@@ -520,5 +520,39 @@ shape: (..., 2)
 
 ```
 
+If we try to run more queries at this point, it will error. Once the privacy budget is consumed, the library prevents you from running more queries with that Queryable.
 
+## OpenDP architecture
 
+TODO: Layer cake diagram; Point out that some R support is available, but not API just demonstrated.
+
+## Beyond just releasing a single number
+
+TODO?
+
+- PCA
+- Synthetic data
+- Regression
+- 
+
+## Limitations of DP
+
+### Less accurate stats...
+
+What is the alternative? If people lose confidence in the way their data is handled, then they may be less willing to participate in the future.
+
+Ad hoc anonymization is risky, and might introduce biases that are less well chacterized.
+
+### Less flexible workflow...
+
+If you let yourself be too flexible, there's a risk of p-hacking.
+
+The methodology that DP imposes is similar to what we should be doing in any case if we want our research to be reproducible.
+
+## Relationship to other PETs
+
+TODO
+
+## Wrap up
+
+If there's time, gather the groups again, and revisit the examples you gave earlier. Would you approach them differently now?
