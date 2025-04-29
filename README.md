@@ -1,7 +1,9 @@
 # harvard-it-summit-2025
 Slides for June 2025 talk on OpenDP and DP Wizard
 
-Managing this in github so that:
+[Deployed on Github pages](https://opendp.github.io/harvard-it-summit-2025)
+
+Managing this in Github so that:
 - I can use doctest to confirm that all the examples work. 
 - I don't waste time tweaking the page layout.
 - We can use the normal PR review process.
