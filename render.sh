@@ -2,12 +2,14 @@
 
 set -euo pipefail
 
+MD=index.md
+
 # Check the math!
-python3 -m doctest slides.md
+python3 -m doctest $MD
 
 # Slidy worked out of the box; others might be better!
 pandoc -t slidy \
-  -s slides.md \
-  -o slides.html \
-  --embed-resources --standalone \
-&& open slides.html
+  -s $MD \
+  -o index.html \
+  --standalone \
+&& open index.html
