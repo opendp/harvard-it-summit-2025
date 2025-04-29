@@ -524,16 +524,26 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 
 ## OpenDP architecture
 
-TODO: Layer cake diagram; Point out that some R support is available, but not API just demonstrated.
+![](images/stack.drawio.svg)
 
-## Beyond just releasing a single number
+- OpenDP is designed to support multiple languages, but Python is the most well developed.
+- Language bindings are generated code, so adding another language should be a one-time cost.
+- But that doesn't include the higher level interface than handles the idioms of different languages.
 
-TODO?
+## What else can we do with DP?
 
-- PCA
-- Synthetic data
-- Regression
-- 
+### With OpenDP
+
+- Quantiles ([documentation](https://docs.opendp.org/en/stable/api/user-guide/transformations/aggregation-quantile.html))
+- PCA ([documentation](https://docs.opendp.org/en/stable/getting-started/statistical-modeling/pca.html))
+- RAPPOR ([documentation](https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#opendp.measurements.make_randomized_response_bitvec))
+- Linear regression ([tutorial example](https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression))
+
+### Other applications
+
+- Synthethic data generation
+- Stochasitic gradient descent
+
 
 ## Limitations of DP
 
@@ -549,9 +559,17 @@ If you let yourself be too flexible, there's a risk of p-hacking.
 
 The methodology that DP imposes is similar to what we should be doing in any case if we want our research to be reproducible.
 
-## Relationship to other PETs
+## Other PETs
 
-TODO
+DP is one of a number of privacy enhancing technologies, but for the most part these protect privacy during computation, but can't preserve privacy in results like DP.
+
+In applications at scale, technologies will be combined, utilizing the best parts of each.
+
+- [Fully homomorphic encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)
+- [Secure multi-party computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
+- [Federated learning](https://en.wikipedia.org/wiki/Federated_learning)
+- [Trusted execution environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)
+- and more!
 
 ## Wrap up
 

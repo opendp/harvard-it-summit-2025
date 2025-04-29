@@ -15,3 +15,5 @@ python3 -m venv .venv
 pip install -r requirements.txt
 ./render.sh
 ```
+
+For now, to keep it simple, run `render.sh` by hand and check in the output `index.html`.
