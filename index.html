@@ -170,7 +170,7 @@ honestly:</p>
 <li>Decide on your answer.</li>
 <li>Then flip a coin.</li>
 <li>If it’s tails, flip again.</li>
-<li>Use this table to respond:</li>
+<li>Use this table for your public response (either “A” or “B”):</li>
 </ul>
 <table>
 <thead>
@@ -437,7 +437,6 @@ than 50% of the time.
 </td>
 <td>
 <ul>
-<li>If ε=1, even odds that my record is in the dataset.</li>
 <li>ε is on a log scale, and smaller values are safer.</li>
 <li>If two calculations consume ε<sub>1</sub> and ε<sub>2</sub>,
 together they consume ε<sub>1</sub> + ε<sub>2</sub>.</li>
@@ -577,9 +576,10 @@ that demonstrate the OpenDP library. We can also download a complete
 example.</p>
 <hr>
 <h3 id="opendp-demo">OpenDP Demo</h3>
-<p>This is a demonstration of how OpenDP can be used to create a
-differentially private release. To learn more about what’s going on
-here, see the documentation for OpenDP: https://docs.opendp.org/</p>
+<p>This is a demonstration of how the OpenDP Library can be used to
+create a differentially private release. To learn more about what’s
+going on here, see the documentation for OpenDP:
+https://docs.opendp.org/</p>
 <h4 id="prerequisites">Prerequisites</h4>
 <p>First install and import the required dependencies:</p>
 <pre><code>%pip install &#39;opendp[polars]==0.13.0&#39; matplotlib</code></pre>
@@ -728,18 +728,34 @@ queries with that Queryable.</p>
 </div>
 <div id="opendp-architecture" class="slide section level2">
 <h1>OpenDP architecture</h1>
-<p>TODO: Layer cake diagram; Point out that some R support is available,
-but not API just demonstrated.</p>
-</div>
-<div id="beyond-just-releasing-a-single-number"
-class="slide section level2">
-<h1>Beyond just releasing a single number</h1>
-<p>TODO?</p>
+<p><img src="images/stack.drawio.svg" /></p>
 <ul>
-<li>PCA</li>
-<li>Synthetic data</li>
-<li>Regression</li>
-<li></li>
+<li>OpenDP is designed to support multiple languages, but Python is the
+most well developed.</li>
+<li>Language bindings are generated code, so adding another language
+should be a one-time cost.</li>
+<li>But that doesn’t include the higher level interface than handles the
+idioms of different languages.</li>
+</ul>
+</div>
+<div id="what-else-can-we-do-with-dp" class="slide section level2">
+<h1>What else can we do with DP?</h1>
+<h3 id="with-opendp">With OpenDP</h3>
+<ul>
+<li>Quantiles (<a
+href="https://docs.opendp.org/en/stable/api/user-guide/transformations/aggregation-quantile.html">documentation</a>)</li>
+<li>PCA (<a
+href="https://docs.opendp.org/en/stable/getting-started/statistical-modeling/pca.html">documentation</a>)</li>
+<li>RAPPOR (<a
+href="https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#opendp.measurements.make_randomized_response_bitvec">documentation</a>)</li>
+<li>Linear regression (<a
+href="https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression">tutorial
+example</a>)</li>
+</ul>
+<h3 id="other-applications">Other applications</h3>
+<ul>
+<li>Synthethic data generation</li>
+<li>Stochasitic gradient descent</li>
 </ul>
 </div>
 <div id="limitations-of-dp" class="slide section level2">
@@ -755,9 +771,26 @@ less well chacterized.</p>
 <p>The methodology that DP imposes is similar to what we should be doing
 in any case if we want our research to be reproducible.</p>
 </div>
-<div id="relationship-to-other-pets" class="slide section level2">
-<h1>Relationship to other PETs</h1>
-<p>TODO</p>
+<div id="other-pets" class="slide section level2">
+<h1>Other PETs</h1>
+<p>DP is one of a number of privacy enhancing technologies, but for the
+most part these protect privacy during computation, but can’t preserve
+privacy in results like DP.</p>
+<p>In applications at scale, technologies will be combined, utilizing
+the best parts of each.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Homomorphic_encryption">Fully
+homomorphic encryption</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Secure_multi-party_computation">Secure
+multi-party computation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Federated_learning">Federated
+learning</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Trusted_execution_environment">Trusted
+execution environment</a></li>
+<li>and more!</li>
+</ul>
 </div>
 <div id="wrap-up" class="slide section level2">
 <h1>Wrap up</h1>
