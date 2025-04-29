@@ -123,7 +123,7 @@ Here's a question I might not feel comfortable answering honestly:
 - Decide on your answer.
 - Then flip a coin.
 - If it's tails, flip again.
-- Use this table to respond:
+- Use this table for your public response (either "A" or "B"):
 
 | final:  | heads | tails |
 |---------|-------|-------|
@@ -271,7 +271,6 @@ odds ratio ≤ e<sup>ε</sub>
 </td>
 <td>
 
-- If ε=1, even odds that my record is in the dataset.
 - ε is on a log scale, and smaller values are safer.
 - If two calculations consume ε<sub>1</sub> and ε<sub>2</sub>, together they consume ε<sub>1</sub> + ε<sub>2</sub>.
 - ε is proven worst case bound: Research is tightening the bounds on existing mechanisms, and developing new mechanisms which are more efficient.
