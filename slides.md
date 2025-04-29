@@ -362,7 +362,7 @@ Note the "Code sample" fold-downs: These are Python code snippets that demonstra
 
 ### OpenDP Demo
 
-This is a demonstration of how OpenDP can be used to create a differentially private release. To learn more about what's going on here, see the documentation for OpenDP: https://docs.opendp.org/
+This is a demonstration of how the OpenDP Library can be used to create a differentially private release. To learn more about what's going on here, see the documentation for OpenDP: https://docs.opendp.org/
 
 #### Prerequisites
 
