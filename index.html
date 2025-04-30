@@ -45,16 +45,12 @@ Chuck McCallum, software developer with the OpenDP Project at SEAS
 <h1>Outline</h1>
 <ul>
 <li>Who cares about privacy?</li>
-<li>Class grades problem</li>
-<li>What’s “differential” about differential privacy?</li>
-<li><strong>Let’s do differential privacy!</strong></li>
-<li>Hold on… We could get a negative number back?!</li>
+<li>Simple examples of DP (We only need algebra!)</li>
+<li>Interpretation of DP results</li>
 <li>Privacy budgets and epsilon</li>
-<li><strong>Privacy Deployments Registry, and a discussion</strong></li>
-<li>Return to the class grades problem</li>
-<li><strong>Experiments with DP Wizard</strong></li>
-<li>Introduction to OpenDP</li>
-<li><strong>What’s the right tool for the job?</strong></li>
+<li>Interactive exercise with DP Wizard</li>
+<li>Walk through OpenDP example</li>
+<li>Wider view</li>
 </ul>
 </div>
 <div id="who-cares-about-privacy" class="slide section level2">
@@ -284,15 +280,17 @@ class="slide section level2">
 </table>
 </td>
 <td>
-<h3 id="what-does-this-mean">What does this mean?</h3>
-<h3 id="how-do-we-explain-it-to-users">How do we explain it to
+<h3 id="what-does-this-mean">(1) What does this mean?</h3>
+<h3 id="how-do-we-explain-it-to-users">(2) How do we explain it to
 users?</h3>
+<h3 id="how-can-we-make-it-more-accurate">(3) How can we make it more
+accurate?</h3>
 </td>
 </tr>
 </table>
 </div>
 <div id="what-does-this-mean-1" class="slide section level2">
-<h1>What does this mean?</h1>
+<h1>(1) What does this mean?</h1>
 <table>
 <tr>
 <td>
@@ -328,14 +326,14 @@ users?</h3>
 </table>
 </td>
 <td>
-<h3 id="this-is-one-draw-from-a-random-distribution">This is one draw
-from a random distribution</h3>
+<h3 id="this-is-one-draw-from-a-random-distribution.">This is one draw
+from a random distribution.</h3>
 <!-- If the true value is 0, we could still draw a value here or here! -->
 <p><img src="images/distribution.drawio.svg" /></p>
 <h3
-id="if-we-combine-this-number-with-others-negative-values-produce-more-accurate-results">If
+id="if-we-combine-this-number-with-others-negative-values-produce-more-accurate-results.">If
 we combine this number with others, negative values produce more
-accurate results</h3>
+accurate results.</h3>
 <p>Imagine all the sessions make their own DP estimate: If we clipped
 each value at zero, the mean will be biased.</p>
 </td>
@@ -343,7 +341,43 @@ each value at zero, the mean will be biased.</p>
 </table>
 </div>
 <div id="how-do-we-explain-it-to-users-1" class="slide section level2">
-<h1>How do we explain it to users?</h1>
+<h1>(2) How do we explain it to users?</h1>
+<table>
+<tr>
+<td>
+<table>
+<thead>
+<tr>
+<th>A%</th>
+<th>Yes%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0%</td>
+<td>-50%</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>150%</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<h3 id="this-is-hard">This is hard!</h3>
 <p><a
 href="https://www.bloomberg.com/news/articles/2021-08-12/data-scientists-ask-can-we-trust-the-2020-census">Bloomberg,
 August 12, 2021: “Data Scientists Square Off Over Trust and Privacy in
@@ -358,14 +392,54 @@ hundreds of years.</p>
 <p>Quasi-officially, though, the current population for the 12-acre
 island stands at 48.</p>
 </blockquote>
-<p>Questions:</p>
+<h3 id="exercise">Exercise:</h3>
 <ul>
-<li>How would you explain our here-for-the-free-lunch stat?</li>
-<li>How could we make it more accurate?</li>
+<li>Pair up, and in your own words explain our here-for-the-free-lunch
+stat.</li>
+<li>Brainstorm how could we make it more accurate.</li>
 </ul>
+</td>
+</tr>
+</table>
 </div>
-<div id="how-can-we-improve-accuracy" class="slide section level2">
-<h1>How can we improve accuracy?</h1>
+<div id="how-can-we-make-it-more-accurate-1"
+class="slide section level2">
+<h1>(3) How can we make it more accurate?</h1>
+<table>
+<tr>
+<td>
+<table>
+<thead>
+<tr>
+<th>A%</th>
+<th>Yes%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0%</td>
+<td>-50%</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>150%</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
 <ul>
 <li>Recruit more study participants.
 <ul>
@@ -427,6 +501,9 @@ than 50% of the time.
 “Privacy Budget”.</li>
 </ul></li>
 </ul>
+</td>
+</tr>
+</table>
 </div>
 <div id="privacy-budgets-and-epsilon" class="slide section level2">
 <h1>Privacy budgets and epsilon</h1>
@@ -508,8 +585,8 @@ everyone have a seat at the table?</li>
 <div id="return-to-the-class-grades-example"
 class="slide section level2">
 <h1>Return to the class grades example</h1>
-<p>… but to make it more interesting, look at histograms of letter
-grades, instead of just finding a mean.</p>
+<p>To make it more interesting, we’ll look at histograms of grades,
+instead of just finding a mean.</p>
 <p><strong><a
 href="https://pypi.org/project/dp_wizard/"><code>pip install dp_wizard</code></a>,
 and analyze your own private CSVs locally,</strong></p>
@@ -549,8 +626,8 @@ and only provide column names.</strong></p>
 <div id="dp-wizard-experiments" class="slide section level2">
 <h1>DP Wizard experiments</h1>
 <p>For 5 minutes, experiment with one parameter, and then pick someone
-to summarize your the result of your changes on the <em>accuracy</em> of
-the DP statistics.</p>
+to summarize the result of your changes on the <em>accuracy</em> of the
+DP statistics.</p>
 <table>
 <tr>
 <td>
@@ -733,12 +810,15 @@ queries with that Queryable.</p>
 <h1>OpenDP architecture</h1>
 <p><img src="images/stack.drawio.svg" /></p>
 <ul>
+<li>Solid implementations of algorithms; component architecture that
+ensures correctness… but it does have a learning curve.</li>
 <li>OpenDP is designed to support multiple languages, but Python is the
 most well developed.</li>
 <li>Language bindings are generated code, so adding another language
 should be a one-time cost.</li>
 <li>But that doesn’t include the higher level interface than handles the
 idioms of different languages.</li>
+<li>It is being used in the real-world!</li>
 </ul>
 </div>
 <div id="what-else-can-we-do-with-dp" class="slide section level2">
@@ -755,32 +835,40 @@ href="https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#open
 href="https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression">tutorial
 example</a>)</li>
 </ul>
-<h3 id="other-applications">Other applications</h3>
+<h3 id="other-libraries">Other libraries</h3>
 <ul>
-<li>Synthethic data generation</li>
-<li>Stochasitic gradient descent</li>
+<li>Synthetic data generation</li>
+<li>Stochastic gradient descent</li>
+<li>SQL interfaces</li>
 </ul>
 </div>
 <div id="limitations-of-dp" class="slide section level2">
 <h1>Limitations of DP</h1>
-<h3 id="less-accurate-stats">Less accurate stats…</h3>
-<p>What is the alternative? If people lose confidence in the way their
-data is handled, then they may be less willing to participate in the
+<h3 id="less-accurate-stats">Less accurate stats</h3>
+<p>What is the alternative? If people believe their privacy has not been
+protected, then they may be less willing to participate in the
 future.</p>
-<p>Ad hoc anonymization is risky, and might introduce biases that are
-less well chacterized.</p>
-<h3 id="less-flexible-workflow">Less flexible workflow…</h3>
-<p>If you let yourself be too flexible, there’s a risk of p-hacking.</p>
-<p>The methodology that DP imposes is similar to what we should be doing
-in any case if we want our research to be reproducible.</p>
+<p>Other anonymization and grouping techniques are more fragile, and
+might introduce biases that are less well chacterized.</p>
+<h3 id="less-flexible-workflow">Less flexible workflow</h3>
+<p>If you let yourself be too flexible, there’s a risk of p-hacking. The
+methodology that DP imposes is similar to what we should be doing in any
+case if we want our research to be reproducible.</p>
+<p><small>(But there is work adapting DP for exploratory analysis: <a
+href="https://arxiv.org/abs/2406.01964"><em>Measure-Observe-Remeasure</em></a>.)</small></p>
+<h3 id="still-requires-trust">Still requires trust</h3>
+<p>With local DP, do you trust the software and hardware that it runs
+on?</p>
+<p>With central DP, do you trust the authority to abide by their
+commitments?</p>
 </div>
 <div id="other-pets" class="slide section level2">
 <h1>Other PETs</h1>
-<p>DP is one of a number of privacy enhancing technologies, but for the
-most part these protect privacy during computation, but can’t preserve
-privacy in results like DP.</p>
-<p>In applications at scale, technologies will be combined, utilizing
-the best parts of each.</p>
+<p>DP is one of a number of privacy enhancing technologies (PETs), and
+in applications at scale these will be combined, utilizing the best
+parts of each.</p>
+<p>Other PETs protect privacy during computation, but don’t preserve
+privacy in results.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Homomorphic_encryption">Fully
 homomorphic encryption</a></li>

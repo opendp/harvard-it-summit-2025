@@ -6,16 +6,12 @@ author: Chuck McCallum, software developer with the OpenDP Project at SEAS
 ## Outline
 
 - Who cares about privacy?
-- Class grades problem
-- What's "differential" about differential privacy?
-- **Let's do differential privacy!**
-- Hold on... We could get a negative number back?!
+- Simple examples of DP (We only need algebra!)
+- Interpretation of DP results
 - Privacy budgets and epsilon
-- **Privacy Deployments Registry, and a discussion**
-- Return to the class grades problem
-- **Experiments with DP Wizard**
-- Introduction to OpenDP
-- **What's the right tool for the job?**
+- Interactive exercise with DP Wizard
+- Walk through OpenDP example
+- Wider view
 
 ## Who cares about privacy?
 
@@ -171,15 +167,17 @@ A% = 1/2 * Yes% + 1/4
 </td>
 <td>
 
-### What does this mean?
+### (1) What does this mean?
 
-### How do we explain it to users?
+### (2) How do we explain it to users?
+
+### (3) How can we make it more accurate?
 
 </td>
 </tr>
 </table>
 
-## What does this mean?
+## (1) What does this mean?
 
 <table>
 <tr>
@@ -196,12 +194,12 @@ A% = 1/2 * Yes% + 1/4
 </td>
 <td>
 
-### This is one draw from a random distribution
+### This is one draw from a random distribution.
 
 <!-- If the true value is 0, we could still draw a value here or here! -->
 ![](images/distribution.drawio.svg)
 
-### If we combine this number with others, negative values produce more accurate results
+### If we combine this number with others, negative values produce more accurate results.
 
 Imagine all the sessions make their own DP estimate:
 If we clipped each value at zero, the mean will be biased.
@@ -210,7 +208,24 @@ If we clipped each value at zero, the mean will be biased.
 </tr>
 </table>
 
-## How do we explain it to users?
+## (2) How do we explain it to users?
+
+<table>
+<tr>
+<td>
+
+| A% | Yes% |
+|----|----|
+| 0% | -50% |
+| 25% | 0% |
+| 50% | 50% |
+| 75% | 100% |
+| 100% | 150% |
+
+</td>
+<td>
+
+### This is hard!
 
 [Bloomberg, August 12, 2021: "Data Scientists Square Off Over Trust and Privacy in 2020 Census"](https://www.bloomberg.com/news/articles/2021-08-12/data-scientists-ask-can-we-trust-the-2020-census)
 
@@ -220,12 +235,31 @@ If we clipped each value at zero, the mean will be biased.
 >
 >Quasi-officially, though, the current population for the 12-acre island stands at 48.
 
-Questions:
+### Exercise:
 
-- How would you explain our here-for-the-free-lunch stat?
-- How could we make it more accurate?
+- Pair up, and in your own words explain our here-for-the-free-lunch stat.
+- Brainstorm how could we make it more accurate.
 
-## How can we improve accuracy?
+</td>
+</tr>
+</table>
+
+## (3) How can we make it more accurate?
+
+<table>
+<tr>
+<td>
+
+| A% | Yes% |
+|----|----|
+| 0% | -50% |
+| 25% | 0% |
+| 50% | 50% |
+| 75% | 100% |
+| 100% | 150% |
+
+</td>
+<td>
 
 - Recruit more study participants.
   - May not be an option.
@@ -254,6 +288,10 @@ Who do we trust?
 
 - Instead of using a fair coin, we could randomize the response less than 50% of the time.
   - We're changing the trade-off between privacy and accuracy, the "Privacy Budget".
+
+</td>
+</tr>
+</table>
 
 ## Privacy budgets and epsilon
 
@@ -299,7 +337,7 @@ A sample from [`registry.oblivious.com`](https://registry.oblivious.com/#registr
 
 ## Return to the class grades example
 
-... but to make it more interesting, look at histograms of letter grades, instead of just finding a mean.
+To make it more interesting, we'll look at histograms of grades, instead of just finding a mean.
 
 **[`pip install dp_wizard`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally,**
 
@@ -332,7 +370,7 @@ Then:
 
 ## DP Wizard experiments
 
-For 5 minutes, experiment with one parameter, and then pick someone to summarize your the result of your changes on the _accuracy_ of the DP statistics.
+For 5 minutes, experiment with one parameter, and then pick someone to summarize the result of your changes on the _accuracy_ of the DP statistics.
 
 <table>
 <tr>
@@ -525,9 +563,11 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 
 ![](images/stack.drawio.svg)
 
+- Solid implementations of algorithms; component architecture that ensures correctness... but it does have a learning curve.
 - OpenDP is designed to support multiple languages, but Python is the most well developed.
 - Language bindings are generated code, so adding another language should be a one-time cost.
 - But that doesn't include the higher level interface than handles the idioms of different languages.
+- It is being used in the real-world!
 
 ## What else can we do with DP?
 
@@ -538,31 +578,39 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 - RAPPOR ([documentation](https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#opendp.measurements.make_randomized_response_bitvec))
 - Linear regression ([tutorial example](https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression))
 
-### Other applications
+### Other libraries
 
-- Synthethic data generation
-- Stochasitic gradient descent
+- Synthetic data generation
+- Stochastic gradient descent
+- SQL interfaces
 
 
 ## Limitations of DP
 
-### Less accurate stats...
+### Less accurate stats
 
-What is the alternative? If people lose confidence in the way their data is handled, then they may be less willing to participate in the future.
+What is the alternative? If people believe their privacy has not been protected, then they may be less willing to participate in the future.
 
-Ad hoc anonymization is risky, and might introduce biases that are less well chacterized.
+Other anonymization and grouping techniques are more fragile, and might introduce biases that are less well chacterized.
 
-### Less flexible workflow...
+### Less flexible workflow
 
-If you let yourself be too flexible, there's a risk of p-hacking.
+If you let yourself be too flexible, there's a risk of p-hacking. The methodology that DP imposes is similar to what we should be doing in any case if we want our research to be reproducible.
 
-The methodology that DP imposes is similar to what we should be doing in any case if we want our research to be reproducible.
+<small>(But there is work adapting DP for exploratory analysis: [_Measure-Observe-Remeasure_](https://arxiv.org/abs/2406.01964).)</small>
+
+### Still requires trust
+
+With local DP, do you trust the software and hardware that it runs on?
+
+With central DP, do you trust the authority to abide by their commitments?
+
 
 ## Other PETs
 
-DP is one of a number of privacy enhancing technologies, but for the most part these protect privacy during computation, but can't preserve privacy in results like DP.
+DP is one of a number of privacy enhancing technologies (PETs), and in applications at scale these will be combined, utilizing the best parts of each.
 
-In applications at scale, technologies will be combined, utilizing the best parts of each.
+Other PETs protect privacy during computation, but don't preserve privacy in results.
 
 - [Fully homomorphic encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)
 - [Secure multi-party computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
