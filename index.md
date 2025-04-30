@@ -142,13 +142,13 @@ What does it look like in the limit?
 Given the fraction "A", solve for fraction "yes".
 
 ```
-A% = 3/4 * Y% + 1/4 * N%
-A% = 3/4 * Y% + 1/4 * (1 - Y%)
-A% = 1/2 * Y% + 1/4
-2 * (A% - 1/4) = Y% 
+A% = 3/4 * Yes% + 1/4 * No%
+A% = 3/4 * Yes% + 1/4 * (1 - Yes%)
+A% = 1/2 * Yes% + 1/4
+2 * (A% - 1/4) = Yes% 
 ```
 
-| A% | Y% |  |
+| A% | Yes% |  |
 |----|----|--|
 | 25% | 0% |  |
 | 50% | 50% | 👉 These are noisy estimates!
@@ -160,7 +160,7 @@ A% = 1/2 * Y% + 1/4
 <tr>
 <td>
 
-| A% | Y% |
+| A% | Yes% |
 |----|----|
 | 0% | -50% |
 | 25% | 0% |
@@ -185,7 +185,7 @@ A% = 1/2 * Y% + 1/4
 <tr>
 <td>
 
-| A% | Y% |
+| A% | Yes% |
 |----|----|
 | 0% | -50% |
 | 25% | 0% |
