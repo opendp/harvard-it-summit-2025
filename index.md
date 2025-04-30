@@ -125,7 +125,7 @@ Here's a question I might not feel comfortable answering honestly:
 - If it's tails, flip again.
 - Use this table for your public response (either "A" or "B"):
 
-| final:  | heads | tails |
+| final:  | heads (either flip) | tails (just last flip) |
 |---------|-------|-------|
 | **yes** | A     | B     |
 | **no**  | B     | A     |

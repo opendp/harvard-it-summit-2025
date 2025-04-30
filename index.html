@@ -31,6 +31,9 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
+<div class="background" style="float: right;"> 
+    <img src="images/opendp-logo-scaled.png" style="padding: 0.5em;">
+</div> 
 <div class="slide titlepage">
   <h1 class="title">Introduction to differential privacy with OpenDP and
 DP Wizard</h1>
@@ -176,8 +179,8 @@ honestly:</p>
 <thead>
 <tr>
 <th>final:</th>
-<th>heads</th>
-<th>tails</th>
+<th>heads (either flip)</th>
+<th>tails (just last flip)</th>
 </tr>
 </thead>
 <tbody>
@@ -212,15 +215,15 @@ honestly:</p>
 </tbody>
 </table>
 <p>Given the fraction “A”, solve for fraction “yes”.</p>
-<pre><code>A% = 3/4 * Y% + 1/4 * N%
-A% = 3/4 * Y% + 1/4 * (1 - Y%)
-A% = 1/2 * Y% + 1/4
-2 * (A% - 1/4) = Y% </code></pre>
+<pre><code>A% = 3/4 * Yes% + 1/4 * No%
+A% = 3/4 * Yes% + 1/4 * (1 - Yes%)
+A% = 1/2 * Yes% + 1/4
+2 * (A% - 1/4) = Yes% </code></pre>
 <table>
 <thead>
 <tr>
 <th>A%</th>
-<th>Y%</th>
+<th>Yes%</th>
 <th></th>
 </tr>
 </thead>
@@ -253,7 +256,7 @@ class="slide section level2">
 <thead>
 <tr>
 <th>A%</th>
-<th>Y%</th>
+<th>Yes%</th>
 </tr>
 </thead>
 <tbody>
@@ -297,7 +300,7 @@ users?</h3>
 <thead>
 <tr>
 <th>A%</th>
-<th>Y%</th>
+<th>Yes%</th>
 </tr>
 </thead>
 <tbody>
