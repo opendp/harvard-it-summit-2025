@@ -20,9 +20,9 @@ And what is my background?
 ### Harvard Herbaria (2013-2014)
 
 Rare plants might only be known to grow in one location.
-What geographic information can be public without giving too detail to poachers?
+What geographic information can be public without giving too much detail to poachers?
 
-### Gehlenborg Lab at HMS (2016-2022)
+### Gehlenborg Lab at HMS (DBMI) (2016-2022)
 
 Medical knowledge advances by generalizing from unique stories.
 How can we respect the privacy of individuals while still supporting research?
@@ -81,7 +81,7 @@ Ok, but what does "adding calibrated noise" even mean?
   - There's a tradeoff between accuracy and privacy.
   - The right balance will depend on context.
 - What if there is another release (perhaps before the exam)?
-  - We need to set a **privacy budget** and allocate it among queries.
+  - We need to set a privacy budget and allocate it among queries.
   - Reuse information you already have to conserve your budget.
 
 ## What's "differential" about differential privacy?
@@ -608,7 +608,7 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 </tr>
 </table>
 
-## Limitations of DP
+## DP tradeoffs
 
 ### Less accurate stats
 
@@ -622,7 +622,21 @@ If you let yourself be too flexible, there's a risk of p-hacking. The methodolog
 
 <small>(But there is work adapting DP for exploratory analysis: [_Measure-Observe-Remeasure_](https://arxiv.org/abs/2406.01964).)</small>
 
-### Still requires trust
+## DP limits
+
+### Requires bounds on sensitivity
+
+For stats like income, try histograms or quantiles with varying step sizes?
+
+Multi-step workflows: Spend a little of your budget first, just to understand distributions.
+
+### Can't anonymize arbitrary data
+
+Text or image data can't just be dropped into DP.
+
+Even if it can be reduced to a feature vector, can you define a unit of privacy?
+
+### Requires trust
 
 With local DP, do you trust the software and hardware that it runs on?
 
