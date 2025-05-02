@@ -136,13 +136,13 @@ class="slide section level2">
 <tr>
 <td>
 <p>An algorithm is differentially private if by looking at the output,
-you cannot tell whether any individual’s data was included in the
+you can’t tell whether any individual’s data was included in the
 original dataset or not.</p>
 <p>Or: The behavior of the algorithm hardly changes when a single
 individual joins or leaves the dataset.</p>
-<p>Or: Anything the algorithm might output on a database containing some
-individual’s information is almost as likely to have come from a
-database without that individual’s information.</p>
+<p><img src="images/differential.drawio.svg" /></p>
+<p>We need to bound the contributions of individuals: For grades, that
+is easy, but it isn’t always!</p>
 </td>
 <td>
 <!-- Pr[A(D1) in S] / Pr[A(D2) in S] <= e^epsilon ... OBVIOUSLY. -->
@@ -168,7 +168,7 @@ honestly:</p>
 <ul>
 <li>Decide on your answer.</li>
 <li>Then flip a coin.</li>
-<li>If it’s tails, flip again.</li>
+<li>If it’s tails, flip once more.</li>
 <li>Use this table for your public response (either “A” or “B”):</li>
 </ul>
 <table>
@@ -192,25 +192,35 @@ honestly:</p>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>And let’s count the “A”s and “B”s.</li>
+</ul>
 </div>
 <div id="lets-do-differential-privacy" class="slide section level2">
-<h1>Let’s do differential privacy</h1>
+<h1>Let’s do differential privacy!</h1>
 <p>What does it look like in the limit?</p>
 <table>
+<thead>
+<tr>
+<th></th>
+<th>heads</th>
+<th>tails</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><strong>yes</strong></td>
-<td>A: 3/4</td>
-<td>B: 1/4</td>
+<td>3/4 are A</td>
+<td>1/4 are B</td>
 </tr>
 <tr>
 <td><strong>no</strong></td>
-<td>B: 3/4</td>
-<td>A: 1/4</td>
+<td>3/4 are B</td>
+<td>1/4 are A</td>
 </tr>
 </tbody>
 </table>
-<p>Given the fraction “A”, solve for fraction “yes”.</p>
+<p>Given the percentage “A”, solve for percentage “Yes”.</p>
 <pre><code>A% = 3/4 * Yes% + 1/4 * No%
 A% = 3/4 * Yes% + 1/4 * (1 - Yes%)
 A% = 1/2 * Yes% + 1/4
@@ -293,7 +303,7 @@ accurate?</h3>
 <h1>(1) What does this mean?</h1>
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 <table>
 <thead>
 <tr>
@@ -344,7 +354,7 @@ each value at zero, the mean will be biased.</p>
 <h1>(2) How do we explain it to users?</h1>
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 <table>
 <thead>
 <tr>
@@ -407,7 +417,7 @@ class="slide section level2">
 <h1>(3) How can we make it more accurate?</h1>
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 <table>
 <thead>
 <tr>
@@ -885,8 +895,43 @@ execution environment</a></li>
 </div>
 <div id="wrap-up" class="slide section level2">
 <h1>Wrap up</h1>
-<p>If there’s time, gather the groups again, and revisit the examples
-you gave earlier. Would you approach them differently now?</p>
+<p>If there’s time, revisit the examples you gave earlier. Would you
+approach them differently now?</p>
+<p>Otherwise, thank you, and stay in touch!</p>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="36%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>OpenDP</th>
+<th>DP Wizard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email:</td>
+<td>info@opendp.org</td>
+<td>cmccallum@g.harvard.edu</td>
+</tr>
+<tr>
+<td>docs:</td>
+<td><a href="https://docs.opendp.org">docs.opendp.org</a></td>
+<td><a
+href="https://opendp.github.io/harvard-it-summit-2025">opendp.github.io/harvard-it-summit-2025</a></td>
+</tr>
+<tr>
+<td>source:</td>
+<td><a
+href="https://github.com/opendp/opendp/">github.com/opendp/opendp</a></td>
+<td><a
+href="https://github.com/opendp/dp-wizard/">github.com/opendp/dp-wizard</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </body>
 </html>

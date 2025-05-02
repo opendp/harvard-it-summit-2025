@@ -90,11 +90,13 @@ Ok, but what does "adding calibrated noise" even mean?
 <tr>
 <td>
 
-An algorithm is differentially private if by looking at the output, you cannot tell whether any individual's data was included in the original dataset or not.
+An algorithm is differentially private if by looking at the output, you can't tell whether any individual's data was included in the original dataset or not.
 
 Or: The behavior of the algorithm hardly changes when a single individual joins or leaves the dataset.
 
-Or: Anything the algorithm might output on a database containing some individual's information is almost as likely to have come from a database without that individual's information.
+![](images/differential.drawio.svg)
+
+We need to bound the contributions of individuals: For grades, that is easy, but it isn't always!
 
 </td>
 <td>
@@ -118,7 +120,7 @@ Here's a question I might not feel comfortable answering honestly:
 
 - Decide on your answer.
 - Then flip a coin.
-- If it's tails, flip again.
+- If it's tails, flip once more.
 - Use this table for your public response (either "A" or "B"):
 
 | final:  | heads (either flip) | tails (just last flip) |
@@ -126,16 +128,18 @@ Here's a question I might not feel comfortable answering honestly:
 | **yes** | A     | B     |
 | **no**  | B     | A     |
 
-## Let's do differential privacy
+- And let's count the "A"s and "B"s.
+
+## Let's do differential privacy!
 
 What does it look like in the limit?
 
-|         |       |       |
+|         | heads | tails |
 |---------|-------|-------|
-| **yes** | A: 3/4 | B: 1/4 |
-| **no**  | B: 3/4 | A: 1/4 |
+| **yes** | 3/4 are A | 1/4 are B |
+| **no**  | 3/4 are B | 1/4 are A |
 
-Given the fraction "A", solve for fraction "yes".
+Given the percentage "A", solve for percentage "Yes".
 
 ```
 A% = 3/4 * Yes% + 1/4 * No%
@@ -181,7 +185,7 @@ A% = 1/2 * Yes% + 1/4
 
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 
 | A% | Yes% |
 |----|----|
@@ -212,7 +216,7 @@ If we clipped each value at zero, the mean will be biased.
 
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 
 | A% | Yes% |
 |----|----|
@@ -248,7 +252,7 @@ If we clipped each value at zero, the mean will be biased.
 
 <table>
 <tr>
-<td>
+<td style="vertical-align: top;">
 
 | A% | Yes% |
 |----|----|
@@ -620,4 +624,13 @@ Other PETs protect privacy during computation, but don't preserve privacy in res
 
 ## Wrap up
 
-If there's time, gather the groups again, and revisit the examples you gave earlier. Would you approach them differently now?
+If there's time, revisit the examples you gave earlier. Would you approach them differently now?
+
+Otherwise, thank you, and stay in touch!
+
+|   | OpenDP | DP Wizard |
+|---|--------|-----------|
+|email:| info@opendp.org | cmccallum@g.harvard.edu |
+|docs:| [docs.opendp.org](https://docs.opendp.org) | [opendp.github.io/harvard-it-summit-2025](https://opendp.github.io/harvard-it-summit-2025) |
+|source:| [github.com/opendp/opendp](https://github.com/opendp/opendp/) | [github.com/opendp/dp-wizard](https://github.com/opendp/dp-wizard/) |
+
