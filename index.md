@@ -185,7 +185,7 @@ A% = 1/2 * Yes% + 1/4
 
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 
 | A% | Yes% |
 |----|----|
@@ -216,7 +216,7 @@ If we clipped each value at zero, the mean will be biased.
 
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 
 | A% | Yes% |
 |----|----|
@@ -252,7 +252,7 @@ If we clipped each value at zero, the mean will be biased.
 
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 
 | A% | Yes% |
 |----|----|
@@ -351,7 +351,7 @@ Then:
 
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 
 - On "Select Dataset":
     - Just one column, `grade`.
@@ -359,7 +359,7 @@ Then:
     - Click "Define Analysis".
 
 </td>
-<td style="vertical-align: top;">
+<td>
 
 - On "Define Analysis":
     - Leave "Group By" empty.
@@ -575,6 +575,19 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 
 ## What else can we do with DP?
 
+<table>
+<tr>
+<td>
+
+### With DP Wizard
+
+- Grouping
+- Means
+- Medians
+
+</td>
+<td>
+
 ### With OpenDP
 
 - Quantiles ([documentation](https://docs.opendp.org/en/stable/api/user-guide/transformations/aggregation-quantile.html))
@@ -582,12 +595,18 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 - RAPPOR ([documentation](https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#opendp.measurements.make_randomized_response_bitvec))
 - Linear regression ([tutorial example](https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression))
 
+</td>
+<td>
+
 ### Other libraries
 
 - Synthetic data generation
 - Stochastic gradient descent
 - SQL interfaces
 
+</td>
+</tr>
+</table>
 
 ## Limitations of DP
 

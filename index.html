@@ -31,6 +31,12 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
+<style>
+td {
+    vertical-align: top;
+}
+</style>
+
 <div class="background" style="float: right;"> 
     <img src="images/opendp-logo-scaled.png" style="padding: 0.5em;">
 </div> 
@@ -303,7 +309,7 @@ accurate?</h3>
 <h1>(1) What does this mean?</h1>
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 <table>
 <thead>
 <tr>
@@ -354,7 +360,7 @@ each value at zero, the mean will be biased.</p>
 <h1>(2) How do we explain it to users?</h1>
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 <table>
 <thead>
 <tr>
@@ -417,7 +423,7 @@ class="slide section level2">
 <h1>(3) How can we make it more accurate?</h1>
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 <table>
 <thead>
 <tr>
@@ -606,7 +612,7 @@ and only provide column names.</strong></p>
 <p>Then:</p>
 <table>
 <tr>
-<td style="vertical-align: top;">
+<td>
 <ul>
 <li>On “Select Dataset”:
 <ul>
@@ -616,7 +622,7 @@ and only provide column names.</strong></p>
 </ul></li>
 </ul>
 </td>
-<td style="vertical-align: top;">
+<td>
 <ul>
 <li>On “Define Analysis”:
 <ul>
@@ -833,6 +839,17 @@ idioms of different languages.</li>
 </div>
 <div id="what-else-can-we-do-with-dp" class="slide section level2">
 <h1>What else can we do with DP?</h1>
+<table>
+<tr>
+<td>
+<h3 id="with-dp-wizard">With DP Wizard</h3>
+<ul>
+<li>Grouping</li>
+<li>Means</li>
+<li>Medians</li>
+</ul>
+</td>
+<td>
 <h3 id="with-opendp">With OpenDP</h3>
 <ul>
 <li>Quantiles (<a
@@ -845,12 +862,17 @@ href="https://docs.opendp.org/en/stable/api/python/opendp.measurements.html#open
 href="https://docs.opendp.org/en/stable/getting-started/statistical-modeling/regression.html#Linear-Regression">tutorial
 example</a>)</li>
 </ul>
+</td>
+<td>
 <h3 id="other-libraries">Other libraries</h3>
 <ul>
 <li>Synthetic data generation</li>
 <li>Stochastic gradient descent</li>
 <li>SQL interfaces</li>
 </ul>
+</td>
+</tr>
+</table>
 </div>
 <div id="limitations-of-dp" class="slide section level2">
 <h1>Limitations of DP</h1>
