@@ -341,11 +341,24 @@ A sample from [`registry.oblivious.com`](https://registry.oblivious.com/#registr
 
 ## Return to the class grades example
 
+<table>
+<tr>
+<td>
+
 To make it more interesting, we'll look at histograms of grades, instead of just finding a mean.
 
 **[`pip install dp_wizard`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally,**
 
-**... or go to [`https://dp-wizard.opendp.org`](https://dp-wizard.opendp.org/) and only provide column names.**
+**... or go to [`https://mccalluc-dp-wizard.share.connect.posit.cloud/`](https://mccalluc-dp-wizard.share.connect.posit.cloud/) and only provide column names.**
+
+</td>
+<td>
+
+![](images/dp-wizard-cloud-qr-code.png)
+
+</td>
+</tr>
+</table>
 
 Then:
 
