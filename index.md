@@ -349,7 +349,7 @@ To make it more interesting, we'll look at histograms of grades, instead of just
 
 **[`pip install dp_wizard`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally,**
 
-**... or go to [`https://tinyurl.com/dp-wizard`](https://mccalluc-dp-wizard.share.connect.posit.cloud/) and only provide column names.**
+**... or go to [`tinyurl.com/dp-wizard`](https://mccalluc-dp-wizard.share.connect.posit.cloud/) and only provide column names.**
 
 </td>
 <td>
