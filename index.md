@@ -5,15 +5,35 @@ author: Chuck McCallum, software developer with the OpenDP Project at SEAS
 
 ## Outline
 
-- Who cares about privacy?
-- Simple examples of DP (We only need algebra!)
-- Interpretation of DP results
-- Privacy budgets and epsilon
-- Interactive exercise with DP Wizard
-- Walk through OpenDP example
+<table>
+<tr>
+<td>
+
+### Introduction to differential privacy with OpenDP and DP Wizard
+
+Chuck McCallum, software developer with the OpenDP Project at SEAS
+
+("✋" = class participation!)
+
+https://opendp.github.io/harvard-it-summit-2025
+
+</td>
+<td>
+
+- Who should care about privacy? (and a bio)
+- Class grades problem
+- Let's do differential privacy! ✋
+- Interpretation of DP results ✋
+- Privacy budgets and epsilon ✋
+- DP Wizard live demo ✋
+- Walk through OpenDP notebook
 - Wider view
 
-## Who cares about privacy?
+</td>
+</tr>
+</table>
+
+## Who should care about privacy?
 
 And what is my background?
 
@@ -57,6 +77,8 @@ Can the other students figure out my grade?
 
 >>> # total_without_me / (class_size - 1) = mean_without_me
 >>> total_without_me = (class_size - 1) * mean_without_me
+>>> total_without_me
+3549.0
 
 >>> # (me + total_without_me) / class_size = mean_with_me
 >>> me = mean_with_me * class_size - total_without_me
@@ -110,7 +132,7 @@ By Ted Rall (CC-BY-NC-ND). In [_Differential Privacy_ by Simson L. Garfinkel fro
 </tr>
 </table>
 
-## Randomized response
+## Randomized response ✋
 
 Ideas that we now identify as "DP" were in use before the term was coined: [Stanley L. Warner: "Randomized Response: A Survey Technique for Eliminating Evasive Answer Bias" (1965)](https://www.jstor.org/stable/2283137)
 
@@ -239,7 +261,7 @@ If we clipped each value at zero, the mean will be biased.
 >
 >Quasi-officially, though, the current population for the 12-acre island stands at 48.
 
-### Exercise:
+### Exercise ✋:
 
 - Pair up, and in your own words explain our here-for-the-free-lunch stat.
 - Brainstorm how could we make it more accurate.
@@ -333,13 +355,13 @@ A sample from [`registry.oblivious.com`](https://registry.oblivious.com/#registr
 | Wikimedia Foundation | 1.0 | [Wikipedia Usage Data](https://arxiv.org/abs/2308.16298)
 | US Census | 19.61 | [Disclosure Avoidance System for Redistricting Data](https://www.census.gov/newsroom/press-releases/2021/2020-census-key-parameters.html) |
 
-**Five minute discussion:** Break into groups and...
+**Five minute discussion ✋:** Break into groups and...
 
 - Give examples of private data with public applications, ideally something from your own experience.
 - Pick one of these and identify who would be interested in more accurate statistics, and who would prefer more privacy.
 - Finally, how can these two competing interests be represented? Does everyone have a seat at the table?
 
-## Return to the class grades example
+## Return to the class grades example ✋
 
 <table>
 <tr>
@@ -347,7 +369,7 @@ A sample from [`registry.oblivious.com`](https://registry.oblivious.com/#registr
 
 To make it more interesting, we'll look at histograms of grades, instead of just finding a mean.
 
-**[`pip install dp_wizard`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally,**
+**[`pip install dp_wizard`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally <small>(requires Python>=3.10)</small>**
 
 **... or go to [`tinyurl.com/dp-wizard`](https://mccalluc-dp-wizard.share.connect.posit.cloud/) and only provide column names.**
 
@@ -375,8 +397,8 @@ Then:
 <td>
 
 - On "Define Analysis":
-    - Leave "Group By" empty.
     - Select `grade` in "Columns".
+    - Leave "Group By" empty.
     - Leave "Privacy Budget" at 1, and "Number of Rows" at 100.
 - On the histogram:
     - Change the upper bound to 100.
