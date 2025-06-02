@@ -49,18 +49,34 @@ Chuck McCallum, software developer with the OpenDP Project at SEAS
 </div>
 <div id="outline" class="slide section level2">
 <h1>Outline</h1>
+<table>
+<tr>
+<td>
+<h3
+id="introduction-to-differential-privacy-with-opendp-and-dp-wizard">Introduction
+to differential privacy with OpenDP and DP Wizard</h3>
+<p>Chuck McCallum, software developer with the OpenDP Project at
+SEAS</p>
+<p>(“✋” = class participation!)</p>
+<p>https://opendp.github.io/harvard-it-summit-2025</p>
+</td>
+<td>
 <ul>
-<li>Who cares about privacy?</li>
-<li>Simple examples of DP (We only need algebra!)</li>
-<li>Interpretation of DP results</li>
-<li>Privacy budgets and epsilon</li>
-<li>Interactive exercise with DP Wizard</li>
-<li>Walk through OpenDP example</li>
+<li>Who should care about privacy? (and a bio)</li>
+<li>Class grades problem</li>
+<li>Let’s do differential privacy! ✋</li>
+<li>Interpretation of DP results ✋</li>
+<li>Privacy budgets and epsilon ✋</li>
+<li>DP Wizard live demo ✋</li>
+<li>Walk through OpenDP notebook</li>
 <li>Wider view</li>
 </ul>
+</td>
+</tr>
+</table>
 </div>
-<div id="who-cares-about-privacy" class="slide section level2">
-<h1>Who cares about privacy?</h1>
+<div id="who-should-care-about-privacy" class="slide section level2">
+<h1>Who should care about privacy?</h1>
 <p>And what is my background?</p>
 <h3 id="harvard-herbaria-2013-2014">Harvard Herbaria (2013-2014)</h3>
 <p>Rare plants might only be known to grow in one location. What
@@ -100,6 +116,8 @@ the other students figure out my grade?</p>
 
 &gt;&gt;&gt; # total_without_me / (class_size - 1) = mean_without_me
 &gt;&gt;&gt; total_without_me = (class_size - 1) * mean_without_me
+&gt;&gt;&gt; total_without_me
+3549.0
 
 &gt;&gt;&gt; # (me + total_without_me) / class_size = mean_with_me
 &gt;&gt;&gt; me = mean_with_me * class_size - total_without_me
@@ -160,7 +178,7 @@ Privacy</em> by Simson L. Garfinkel from MIT Press</a></p>
 </table>
 </div>
 <div id="randomized-response" class="slide section level2">
-<h1>Randomized response</h1>
+<h1>Randomized response ✋</h1>
 <p>Ideas that we now identify as “DP” were in use before the term was
 coined: <a href="https://www.jstor.org/stable/2283137">Stanley L.
 Warner: “Randomized Response: A Survey Technique for Eliminating Evasive
@@ -407,7 +425,7 @@ hundreds of years.</p>
 <p>Quasi-officially, though, the current population for the 12-acre
 island stands at 48.</p>
 </blockquote>
-<h3 id="exercise">Exercise:</h3>
+<h3 id="exercise">Exercise ✋:</h3>
 <ul>
 <li>Pair up, and in your own words explain our here-for-the-free-lunch
 stat.</li>
@@ -587,7 +605,8 @@ Avoidance System for Redistricting Data</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Five minute discussion:</strong> Break into groups and…</p>
+<p><strong>Five minute discussion ✋:</strong> Break into groups
+and…</p>
 <ul>
 <li>Give examples of private data with public applications, ideally
 something from your own experience.</li>
@@ -599,7 +618,7 @@ everyone have a seat at the table?</li>
 </div>
 <div id="return-to-the-class-grades-example"
 class="slide section level2">
-<h1>Return to the class grades example</h1>
+<h1>Return to the class grades example ✋</h1>
 <table>
 <tr>
 <td>
@@ -607,9 +626,10 @@ class="slide section level2">
 instead of just finding a mean.</p>
 <p><strong><a
 href="https://pypi.org/project/dp_wizard/"><code>pip install dp_wizard</code></a>,
-and analyze your own private CSVs locally,</strong></p>
+and analyze your own private CSVs locally <small>(requires
+Python&gt;=3.10)</small></strong></p>
 <p><strong>… or go to <a
-href="https://mccalluc-dp-wizard.share.connect.posit.cloud/"><code>https://mccalluc-dp-wizard.share.connect.posit.cloud/</code></a>
+href="https://mccalluc-dp-wizard.share.connect.posit.cloud/"><code>tinyurl.com/dp-wizard</code></a>
 and only provide column names.</strong></p>
 </td>
 <td>
@@ -634,8 +654,8 @@ and only provide column names.</strong></p>
 <ul>
 <li>On “Define Analysis”:
 <ul>
-<li>Leave “Group By” empty.</li>
 <li>Select <code>grade</code> in “Columns”.</li>
+<li>Leave “Group By” empty.</li>
 <li>Leave “Privacy Budget” at 1, and “Number of Rows” at 100.</li>
 </ul></li>
 <li>On the histogram:
