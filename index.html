@@ -57,8 +57,9 @@ id="introduction-to-differential-privacy-with-opendp-and-dp-wizard">Introduction
 to differential privacy with OpenDP and DP Wizard</h3>
 <p>Chuck McCallum, software developer with the OpenDP Project at
 SEAS</p>
+<p>These slides:
+<code>https://opendp.github.io/harvard-it-summit-2025</code></p>
 <p>(“✋” = class participation!)</p>
-<p>https://opendp.github.io/harvard-it-summit-2025</p>
 </td>
 <td>
 <ul>
@@ -622,15 +623,20 @@ class="slide section level2">
 <table>
 <tr>
 <td>
-<p>To make it more interesting, we’ll look at histograms of grades,
-instead of just finding a mean.</p>
+<p>Divide into four teams, and on one computer either:</p>
+<table>
+<tr>
+<td>
 <p><strong><a
-href="https://pypi.org/project/dp_wizard/"><code>pip install dp_wizard</code></a>,
-and analyze your own private CSVs locally <small>(requires
+href="https://pypi.org/project/dp_wizard/"><code>pip install 'dp_wizard[app]'</code></a><br><code>dp_wizard --cloud</code><br><small>(requires
 Python&gt;=3.10)</small></strong></p>
-<p><strong>… or go to <a
-href="https://mccalluc-dp-wizard.share.connect.posit.cloud/"><code>tinyurl.com/dp-wizard</code></a>
-and only provide column names.</strong></p>
+</td>
+<td>
+<p><strong>… or go to: <a
+href="https://mccalluc-dp-wizard.share.connect.posit.cloud/"><code>tinyurl.com/dp-wizard</code></a></strong></p>
+</td>
+</tr>
+</table>
 </td>
 <td>
 <p><img src="images/dp-wizard-cloud-qr-code.png" /></p>
@@ -644,8 +650,8 @@ and only provide column names.</strong></p>
 <ul>
 <li>On “Select Dataset”:
 <ul>
-<li>Just one column, <code>grade</code>.</li>
-<li>Leave the “unit of privacy” at 1.</li>
+<li>Under “CSV Columns”, enter <code>grade</code>.</li>
+<li>Leave the “Unit of Privacy” at 1.</li>
 <li>Click “Define Analysis”.</li>
 </ul></li>
 </ul>
@@ -675,30 +681,37 @@ DP statistics.</p>
 <table>
 <tr>
 <td>
-<p><strong>Group A:</strong> Imagine that rather than protecting the
+<p><strong>Team A:</strong> Imagine that rather than protecting the
 privacy of individual students, we’re interested in the privacy of
-student groups. What would we change?</p>
-<p><strong>Group B:</strong> Imagine we were just interested in
-pass/fail instead of letter grades. What can we change?</p>
+student groups. What do we need to know, and what would we change?</p>
+<p><strong>Team B:</strong> Imagine we were just interested in pass/fail
+instead of letter grades. What can we change?</p>
 </td>
 <td>
-<p><strong>Group C:</strong> Given what we know about the typical
+<p><strong>Team C:</strong> Given what we know about the typical
 distribution of grades, is there something we can change to use our
 privacy budget more efficiently?</p>
-<p><strong>Group D:</strong> What if we were interested in grades across
-the entire school, instead of just one class? (Bonus: Why do you think
-the UI asks for an “estimate” of the number of rows?)</p>
+<p><strong>Team D:</strong> How does accuracy change if we collect the
+same statistic across the entire school with a population of 1000,
+instead of a class of 100?</p>
 </td>
 </tr>
 </table>
 </div>
+<div id="generating-opendp-library-code-with-dp-wizard"
+class="slide section level2">
+<h1>Generating OpenDP Library code with DP Wizard</h1>
+<p>The preview visualization uses the OpenDP Library under the hood, but
+we can also generate OpenDP code.</p>
+<ul>
+<li>Click on “Download Results”</li>
+<li>Then click on “Download HTML”</li>
+</ul>
+<p>We’re going to walk though this notebook.</p>
+</div>
 <div id="introduction-to-the-opendp-library"
 class="slide section level2">
 <h1>Introduction to the OpenDP library</h1>
-<p>Note the “Code sample” fold-downs: These are Python code snippets
-that demonstrate the OpenDP library. We can also download a complete
-example.</p>
-<hr>
 <h3 id="opendp-demo">OpenDP Demo</h3>
 <p>This is a demonstration of how the OpenDP Library can be used to
 create a differentially private release. To learn more about what’s
@@ -858,10 +871,6 @@ queries with that Queryable.</p>
 ensures correctness… but it does have a learning curve.</li>
 <li>OpenDP is designed to support multiple languages, but Python is the
 most well developed.</li>
-<li>Language bindings are generated code, so adding another language
-should be a one-time cost.</li>
-<li>But that doesn’t include the higher level interface than handles the
-idioms of different languages.</li>
 <li>It is being used in the real-world!</li>
 </ul>
 </div>
