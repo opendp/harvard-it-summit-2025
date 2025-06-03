@@ -367,11 +367,22 @@ A sample from [`registry.oblivious.com`](https://registry.oblivious.com/#registr
 <tr>
 <td>
 
-To make it more interesting, we'll look at histograms of grades, instead of just finding a mean.
+Divide into four teams, and on one computer either:
 
-**[`pip install 'dp_wizard[app]'`](https://pypi.org/project/dp_wizard/), and analyze your own private CSVs locally <small>(requires Python>=3.10)</small>**
+<table>
+<tr>
+<td>
 
-**... or go to [`tinyurl.com/dp-wizard`](https://mccalluc-dp-wizard.share.connect.posit.cloud/) and only provide column names.**
+**[`pip install 'dp_wizard[app]'`](https://pypi.org/project/dp_wizard/)<br>`dp_wizard --cloud`<br><small>(requires Python>=3.10)</small>**
+
+</td>
+<td>
+
+**... or go to: [`tinyurl.com/dp-wizard`](https://mccalluc-dp-wizard.share.connect.posit.cloud/)**
+
+</td>
+</tr>
+</table>
 
 </td>
 <td>
@@ -389,8 +400,8 @@ Then:
 <td>
 
 - On "Select Dataset":
-    - Just one column, `grade`.
-    - Leave the "unit of privacy" at 1.
+    - Under "CSV Columns", enter `grade`.
+    - Leave the "Unit of Privacy" at 1.
     - Click "Define Analysis".
 
 </td>
@@ -415,16 +426,16 @@ For 5 minutes, experiment with one parameter, and then pick someone to summarize
 <tr>
 <td>
 
-**Group A:** Imagine that rather than protecting the privacy of individual students, we're interested in the privacy of student groups. What would we change?
+**Team A:** Imagine that rather than protecting the privacy of individual students, we're interested in the privacy of student groups. What do we need to know, and what would we change?
 
-**Group B:** Imagine we were just interested in pass/fail instead of letter grades. What can we change?
+**Team B:** Imagine we were just interested in pass/fail instead of letter grades. What can we change?
 
 </td>
 <td>
 
-**Group C:** Given what we know about the typical distribution of grades, is there something we can change to use our privacy budget more efficiently?
+**Team C:** Given what we know about the typical distribution of grades, is there something we can change to use our privacy budget more efficiently?
 
-**Group D:** What if we were interested in grades across the entire school, instead of just one class? (Bonus: Why do you think the UI asks for an "estimate" of the number of rows?)
+**Team D:** How does accuracy change if we collect the same statistic across the entire school with a population of 1000, instead of a class of 100?
 
 </td>
 </tr>
