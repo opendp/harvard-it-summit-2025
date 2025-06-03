@@ -716,3 +716,8 @@ Otherwise, thank you, and stay in touch!
 |docs:| [docs.opendp.org](https://docs.opendp.org) | [opendp.github.io/harvard-it-summit-2025](https://opendp.github.io/harvard-it-summit-2025) |
 |source:| [github.com/opendp/opendp](https://github.com/opendp/opendp/) | [github.com/opendp/dp-wizard](https://github.com/opendp/dp-wizard/) |
 
+| Books! |
+|--------|
+| [_Differential Privacy_, by Simson Garfinkel](https://direct.mit.edu/books/book/5935/Differential-Privacy): From MIT Press. Available as free PDF, this is a great intro to the social context of DP, and is light on math. |
+| [_Programming Differential Privacy_, by Joe Near and Chiké Abuah](https://programming-dp.com/): Free ebook. The examples use Python, and do not assume any particular library. If you intend to use DP in production, you should not be implementing algorithms yourself! |
+| [_Hands-On Differential Privacy: Introduction to the Theory and Practice Using OpenDP_](https://www.oreilly.com/library/view/hands-on-differential-privacy/9781492097730/): From O’Reilly, this covers a wide range of topics, and the discussion is tied to the OpenDP Library. |
