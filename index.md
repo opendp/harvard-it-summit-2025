@@ -441,11 +441,16 @@ For 5 minutes, experiment with one parameter, and then pick someone to summarize
 </tr>
 </table>
 
+## Generating OpenDP Library code with DP Wizard
+
+The preview visualization uses the OpenDP Library under the hood, but we can also generate OpenDP code.
+
+- Click on "Download Results"
+- Then click on "Download HTML"
+
+We're going to walk though this notebook.
+
 ## Introduction to the OpenDP library
-
-Note the "Code sample" fold-downs: These are Python code snippets that demonstrate the OpenDP library. We can also download a complete example.
-
-<hr>
 
 ### OpenDP Demo
 
@@ -615,8 +620,6 @@ If we try to run more queries at this point, it will error. Once the privacy bud
 
 - Solid implementations of algorithms; component architecture that ensures correctness... but it does have a learning curve.
 - OpenDP is designed to support multiple languages, but Python is the most well developed.
-- Language bindings are generated code, so adding another language should be a one-time cost.
-- But that doesn't include the higher level interface than handles the idioms of different languages.
 - It is being used in the real-world!
 
 ## What else can we do with DP?
