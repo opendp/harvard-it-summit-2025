@@ -13,9 +13,9 @@ author: Chuck McCallum, software developer with the OpenDP Project at SEAS
 
 Chuck McCallum, software developer with the OpenDP Project at SEAS
 
-("✋" = class participation!)
+These slides: `https://opendp.github.io/harvard-it-summit-2025`
 
-https://opendp.github.io/harvard-it-summit-2025
+("✋" = class participation!)
 
 </td>
 <td>
