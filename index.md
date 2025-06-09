@@ -399,7 +399,7 @@ Then:
 <tr>
 <td>
 
-- On "Select Dataset":
+- 1: On "Select Dataset":
     - Under "CSV Columns", enter `grade`.
     - Leave the "Unit of Privacy" at 1.
     - Click "Define Analysis".
@@ -407,11 +407,11 @@ Then:
 </td>
 <td>
 
-- On "Define Analysis":
+- 2: On "Define Analysis":
     - Select `grade` in "Columns".
     - Leave "Group By" empty.
     - Leave "Privacy Budget" at 1, and "Number of Rows" at 100.
-- On the histogram:
+- 3: On the histogram:
     - Change the upper bound to 100.
 
 </td>
