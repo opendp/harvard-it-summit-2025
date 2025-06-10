@@ -704,11 +704,11 @@ Other PETs protect privacy during computation, but don't preserve privacy in res
 - [Trusted execution environment](https://en.wikipedia.org/wiki/Trusted_execution_environment)
 - and more!
 
-## Wrap up
+## Thank you, and stay in touch!
 
-If there's time, revisit the examples you gave earlier. Would you approach them differently now?
-
-Otherwise, thank you, and stay in touch!
+| Help us improve! |
+|---|
+| 👉 [tinyurl.com/dp-wizard-study](https://tinyurl.com/dp-wizard-study) 👈 |
 
 |   | OpenDP | DP Wizard |
 |---|--------|-----------|
