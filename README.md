@@ -1,21 +1,5 @@
 # harvard-it-summit-2025
-Slides for June 2025 talk on OpenDP and DP Wizard
 
-[Deployed on Github pages](https://opendp.github.io/harvard-it-summit-2025)
+This repo is archived.
 
-Managing this in Github so that:
-- I can use doctest to confirm that all the examples work. 
-- I don't waste time tweaking the page layout.
-- We can use the normal PR review process.
-
-## Setup
-
-```
-brew install pandoc
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-./render.sh
-```
-
-For now, to keep it simple, run `render.sh` by hand and check in the output `index.html`.
+Slides are out of date, but they have been copied, updated, and integrated into https://github.com/opendp/dp-wizard, and can be viewed [here](https://opendp.github.io/dp-wizard).

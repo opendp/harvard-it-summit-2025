@@ -9,7 +9,7 @@ author: Chuck McCallum, software developer with the OpenDP Project at SEAS
 <tr>
 <td>
 
-### Introduction to differential privacy with OpenDP and DP Wizard
+**Slides are out of date, but they have been copied, updated, and integrated into https://github.com/opendp/dp-wizard, and can be viewed [here](https://opendp.github.io/dp-wizard).**
 
 Chuck McCallum, software developer with the OpenDP Project at SEAS
 
